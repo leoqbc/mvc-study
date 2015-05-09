@@ -1,0 +1,11 @@
+{
+    "name": "MVC",
+    "require": {
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "src/"
+        }
+    }
+}
