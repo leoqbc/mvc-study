@@ -7,7 +7,7 @@ class View {
     {
         extract($data);
         $_render = self::renderClosure();
-        require_once PATH."/Views/$file.php";
+        require_once "Views/$file.php";
     }
     
     static public function template($file, array $data=[]) 
