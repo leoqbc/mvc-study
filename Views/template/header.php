@@ -1,5 +1,5 @@
 <html>
     <head>
-        <title>Titulo 123</title>
+        <title>MVC Study</title>
     </head>
     <body>
