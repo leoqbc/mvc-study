@@ -8,7 +8,7 @@ class SiteController extends Controller
 {
     public function indexAction() 
     {
-        echo 'teste';
+        View::template('site/index');
     }
     
     public function helloAction($nome='zé ninguém')

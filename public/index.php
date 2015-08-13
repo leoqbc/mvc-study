@@ -1,8 +1,9 @@
 <?php
-define('PATH', dirname(__DIR__));
 
-if( file_exists(PATH.'/vendor/autoload.php') === false ){
-    exit('Please, install composer.');
+define("PATH", dirname(__DIR__));
+
+if(file_exists(PATH."/vendor/autoload.php")===false){
+  exit("Please, install composer.");
 }
 
 require PATH.'/vendor/autoload.php';

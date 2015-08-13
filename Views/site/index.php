@@ -1,2 +1,2 @@
-<h1>Hello guys!</h1>
+<h1>MVC Study</h1>
 
