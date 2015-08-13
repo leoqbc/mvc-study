@@ -11,16 +11,22 @@ class Controller
      */
     public function init()
     {
-        if (isset($_GET['q'])) {
-            $this->router($_GET['q']);
-            return true;
-        }
-        $this->redirect('site');
+        $request = $_SERVER['REQUEST_URI'];
+	$this->router( $request );
     }
 
-    protected function router($get)
+    protected function router($request)
     {
-        $routes = explode('/', $get);
+	$routes = explode('/', $request);
+	
+	if(empty($routes[0])){
+		$routes[0] = "Site";
+	}
+	
+	if(empty($routes[1])){
+		unset($routes[1]);
+	}
+
         $ctrl = 'MVC\\Controllers\\' . ucfirst($routes[0]);
         $ctrl .= 'Controller';
 
@@ -29,6 +35,7 @@ class Controller
         if (!class_exists($ctrl)) {
             exit('<h1>ERRO 404 Pagina nao encontrada</h1>');
         }
+
         $controller = new $ctrl;
 
         switch ($count) {
