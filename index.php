@@ -1,6 +1,6 @@
 <?php
-require 'vendor/autoload.php';
-require 'config.php';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config.php';
 
 use MVC\Core\Controller;
 

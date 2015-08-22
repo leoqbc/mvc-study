@@ -2,7 +2,8 @@
 
 namespace MVC\Core;
 
-class View {
+class View 
+{
     static public function render($file, array $data=[]) 
     {
         extract($data);

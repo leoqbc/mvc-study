@@ -10,23 +10,32 @@ class Controller
      * Redireciona para as urls > Controller
      */
     public function init()
+    {   
+	$this->router($_SERVER['REQUEST_URI']);
+    }
+    
+    protected function parseUri($request)
     {
-        $request = $_SERVER['REQUEST_URI'];
-	$this->router( $request );
+        $request = substr($request, 1);
+        
+        $routes = explode('/', $request);
+        
+        $dirRoot = $_SERVER['DOCUMENT_ROOT'];
+        
+        if (is_dir($dirRoot . "/{$routes[0]}")) {
+            array_shift($routes);
+        }
+        
+        if(empty($routes[0])) {
+		$routes[0] = "Site";
+	}
+        return $routes;
     }
 
     protected function router($request)
     {
-	$routes = explode('/', $request);
-	
-	if(empty($routes[0])){
-		$routes[0] = "Site";
-	}
-	
-	if(empty($routes[1])){
-		unset($routes[1]);
-	}
-
+        $routes = $this->parseUri($request);
+        
         $ctrl = 'MVC\\Controllers\\' . ucfirst($routes[0]);
         $ctrl .= 'Controller';
 
