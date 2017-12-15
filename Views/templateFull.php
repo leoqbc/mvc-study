@@ -1,3 +1,3 @@
-<?php echo $_render('template/header');?>
+<?php echo $_render('parcials/header');?>
 
-<?php echo $_render('template/footer');?>
+<?php echo $_render('parcials/footer');?>

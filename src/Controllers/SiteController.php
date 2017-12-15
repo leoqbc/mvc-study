@@ -15,23 +15,6 @@ class SiteController extends Controller
     {
         View::template('site/hello', ['nome' => $nome]);
     }
-    
-    public function testeAction()
-    {
-        View::template('site/index');
-    }
-    
-    public function templateAction()
-    {
-        View::render('templateFull');
-    }
-    
-    public function testAction()
-    {
-        $robot = new \MVC\Models\Robot();
-        $robot->get(1);
-        var_dump($robot);
-    }
 }
 
  

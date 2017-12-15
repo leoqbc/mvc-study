@@ -20,11 +20,4 @@ class View
         self::render('template/footer', $data);
         ob_flush();
     }
-    
-    static public function renderClosure()
-    {
-        return function($file, array $data=[]) {
-            self::render($file, $data);
-        };
-    }
 }

@@ -2,7 +2,7 @@
 
 namespace MVC\Core;
 
-class Controller
+class Application
 {
     /**
      * Constroi o router das URIs
@@ -11,7 +11,7 @@ class Controller
      */
     public function init()
     {   
-	$this->router($_SERVER['REQUEST_URI']);
+	    $this->router($_SERVER['REQUEST_URI']);
     }
     
     protected function parseUri($request)
@@ -27,8 +27,8 @@ class Controller
         }
         
         if(empty($routes[0])) {
-		$routes[0] = "Site";
-	}
+		    $routes[0] = "Site";
+	    }
         return $routes;
     }
 
