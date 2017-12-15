@@ -8,12 +8,14 @@ class SiteController
 {
     public function index() 
     {
-        View::template('site/index');
+        View::render('site/index');
     }
     
-    public function hello($nome='zé ninguém')
+    public function hello($nome='John Doe')
     {
-        
+        View::template('site/hello', [
+            'nome' => $nome
+        ]);
     }
 }
 
