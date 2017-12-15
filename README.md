@@ -12,3 +12,10 @@ ou
 ```
 composer install
 ```
+
+To initiate the server please run:
+
+```
+mvc-serve
+```
+It'll be initiated by the 8888 port, so check if it's free.

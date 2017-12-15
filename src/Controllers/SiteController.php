@@ -1,19 +1,19 @@
 <?php
-
 namespace MVC\Controllers;
-use MVC\Core\Controller;
-use MVC\Core\View;
 
-class SiteController extends Controller
+use MVC\Core\View;
+use MVC\Core\Redirect;
+
+class SiteController
 {
-    public function indexAction() 
+    public function index() 
     {
         View::template('site/index');
     }
     
-    public function helloAction($nome='zé ninguém')
+    public function hello($nome='zé ninguém')
     {
-        View::template('site/hello', ['nome' => $nome]);
+        
     }
 }
 

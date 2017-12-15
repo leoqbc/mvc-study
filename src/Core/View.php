@@ -1,5 +1,4 @@
 <?php
-
 namespace MVC\Core;
 
 class View 
@@ -7,17 +6,15 @@ class View
     static public function render($file, array $data=[]) 
     {
         extract($data);
-        $_render = self::renderClosure();
-        require_once "Views/$file.php";
+        require PATH . "/views/$file.php";
     }
     
     static public function template($file, array $data=[]) 
     {
         ob_start();
-        $_render = self::renderClosure();
-        self::render('template/header', $data);
+        self::render('partials/header', $data);
         self::render($file, $data);
-        self::render('template/footer', $data);
+        self::render('partials/footer', $data);
         ob_flush();
     }
 }

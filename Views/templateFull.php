@@ -1,3 +1,3 @@
-<?php echo $_render('parcials/header');?>
+<?php echo self::render('parcials/header');?>
 
-<?php echo $_render('parcials/footer');?>
+<?php echo self::render('parcials/footer');?>
