@@ -2,7 +2,7 @@
 define("PATH", dirname(__DIR__));
 
 if(file_exists(PATH."/vendor/autoload.php")===false){
-  exit("Please, install composer.");
+    exit("Please, install composer.");
 }
 
 require PATH.'/vendor/autoload.php';
@@ -16,6 +16,9 @@ use MVC\Core\Routing\Dispatcher;
 require PATH . '\routes.php';
 
 // Inicializa a aplicação
-$app = new Application(new Route, new Dispatcher, require PATH . '/config.php');
-
-$app->init();
+try {
+    $app = new Application(new Route, new Dispatcher, require PATH . '/config.php');
+    $app->init();
+} catch (Error $e) {
+    echo '<h1>' . $e->getMessage() . '</h1>';
+}
