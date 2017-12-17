@@ -7,14 +7,21 @@ use MVC\Core\Invoker\Invoke;
 
 class Dispatcher
 {
+    protected $uri;
+
+    protected $method;
+
+    public function __construct($uri = null, $method = null)
+    {
+        $this->uri = $uri ?? $_SERVER['REQUEST_URI'];
+        $this->method = $metyhod ?? $_SERVER['REQUEST_METHOD'];
+    }
+
     public function dispatch(array $routes)
     {
-        $uri = $_SERVER['REQUEST_URI'];
-        $method = $_SERVER['REQUEST_METHOD'];
-
         $dispatcher = $this->makeRoutes($routes);
 
-        $routeInfo = $dispatcher->dispatch($method, $uri);
+        $routeInfo = $dispatcher->dispatch($this->method, $this->uri);
 
         return $this->handle($routeInfo);
     }
