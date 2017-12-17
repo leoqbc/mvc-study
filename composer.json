@@ -2,7 +2,7 @@
     "name": "tumadjian/mvc",
     "description": "MVC skeleton for study",
     "type": "project",
-    "license": "MIT",
+    "license": "BSD Style",
     "authors": [
         {
             "name": "Leonardo Tumadjian",
