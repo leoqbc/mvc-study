@@ -7,6 +7,7 @@ https://github.com/nikic/FastRoute
 To install via composer, run:
 ```
 composer create-project "tumadjian/mvc" <your-dir>
+```
 
 Antes de iniciar rodar:
 
