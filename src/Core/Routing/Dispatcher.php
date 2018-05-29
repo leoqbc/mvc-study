@@ -40,11 +40,19 @@ class Dispatcher
     {
         switch ($routeInfo[0]) {
             case FastRoute\Dispatcher::NOT_FOUND:
+                http_response_code(404);
                 throw new RouteError('404 NOT FOUND');
+                break;
+            case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+                http_response_code(405);
+                throw new RouteError('METHOD NOT ALLOWED');
                 break;
             case FastRoute\Dispatcher::FOUND:
                 return $routeInfo;
                 break;
+            default:
+                http_response_code(500);
+                throw new \Error('Generic error');
         }
     }
 }
