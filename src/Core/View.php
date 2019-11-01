@@ -6,7 +6,7 @@ class View
     static public function render($file, array $data=[]) 
     {
         extract($data);
-        require PATH . "/views/$file.php";
+        require ROOT_DIRECTORY . "/views/$file.php";
     }
     
     static public function template($file, array $data=[]) 
